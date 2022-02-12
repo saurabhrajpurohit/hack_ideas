@@ -8,10 +8,10 @@ Hack.propTypes = {
 };
 
 export default function Hack({ hackathon, handleClick }) {
-    const { Title, Description, EventDate, Tags, Votes, CreationDate } = hackathon;
+    const { Title, Description, EventDate, Tags, Votes } = hackathon;
     const isLiked = Votes.includes(1001);
     return (
-        <Card>
+        <Card elevation={4}>
             <Stack spacing={1} sx={{ p: 3 }}>
                 <Stack direction="row" alignItems="center" justifyContent="space-between">
                     <Typography variant="h6">
@@ -23,7 +23,7 @@ export default function Hack({ hackathon, handleClick }) {
                         onClick={() => handleClick(!isLiked)}
                         icon={<Recommend />}
                         variant="outlined"
-                        color={ isLiked ? 'primary' : 'default'}
+                        color={isLiked ? 'primary' : 'default'}
                     />
                 </Stack>
                 <Stack direction="row" alignItems="center" justifyContent="space-between">
@@ -36,16 +36,16 @@ export default function Hack({ hackathon, handleClick }) {
                                 color: 'text.primary',
                             }}
                         >
-                            {EventDate.toDate().toDateString()}
+                            {new Date(EventDate.seconds).toDateString()}
                         </Typography>
                     </Typography>
+                </Stack>
+                <Stack direction="row" spacing={1}>
+                    {Tags.map(tag => (<Chip key={tag} size="small" color="success" label={tag} variant="outlined" />))}
                 </Stack>
                 <Typography variant="subtitle2" gutterBottom>
                     {Description}
                 </Typography>
-                <Stack direction="row" spacing={1}>
-                    {Tags.map(tag => (<Chip key={tag} size="small" color="success" label={tag} variant="outlined" />))}
-                </Stack>
             </Stack>
         </Card >
     );
