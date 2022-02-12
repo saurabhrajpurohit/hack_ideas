@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { Chip, Dialog, DialogTitle, DialogContent, DialogContentText, TextField, DialogActions, Button, Stack, MenuItem } from '@mui/material';
 import React from 'react';
-import { TagsService } from '../service/Service';
 
 AddNewHackathon.propTypes = {
     open: PropTypes.bool,
