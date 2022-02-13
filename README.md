@@ -7,7 +7,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - `npm`: `6.14.13`
 
 - Firebase is used inplace of api's to store user data and challenges and there votes.
-- I am adding the .env file as well along with the zip file for testing the code locally
 - Redux is used just for user state management
   - Redux state is not persist at this point of time. So, on refresh the user will be loggedout
 - `Material-UI` UI component library is used for themeing and ui components
