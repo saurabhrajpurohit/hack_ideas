@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ui to be rendered correctly 1`] = `
+<div
+  class="css-10jlxvb"
+  data-testid="page-404"
+>
+  <div
+    class="MuiContainer-root MuiContainer-maxWidthLg css-1oqqzyl-MuiContainer-root"
+  >
+    <div
+      class="MuiBox-root css-95xhe1"
+    >
+      <p
+        class="MuiTypography-root MuiTypography-h3 MuiTypography-paragraph css-1ubdccs-MuiTypography-root"
+      >
+        Sorry, page not found!
+      </p>
+      <p
+        class="MuiTypography-root MuiTypography-body1 css-1pnmrwp-MuiTypography-root"
+      >
+        Sorry, we couldn’t find the page you’re looking for. Perhaps you’ve mistyped the URL? Be sure to check your spelling.
+      </p>
+      <a
+        class="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeLarge MuiButton-containedSizeLarge MuiButtonBase-root  css-fyrgu4-MuiButtonBase-root-MuiButton-root"
+        href="/"
+        tabindex="0"
+      >
+        Go to Home
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </a>
+    </div>
+  </div>
+</div>
+`;

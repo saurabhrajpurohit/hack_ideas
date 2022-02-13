@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ui to be rendered correctly 1`] = `
+<div
+  class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation4 MuiCard-root css-pgkxs3-MuiPaper-root-MuiCard-root"
+  data-testid="test_id"
+>
+  <div
+    class="css-1hridrd-MuiStack-root"
+  >
+    <div
+      class="css-1jv2z0n-MuiStack-root"
+    >
+      <h6
+        class="MuiTypography-root MuiTypography-h6 css-2ulfj5-MuiTypography-root"
+      >
+        Test Title
+      </h6>
+      <div
+        class="MuiButtonBase-root MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorDefault MuiChip-clickable MuiChip-clickableColorDefault MuiChip-outlinedDefault css-1yd5aew-MuiButtonBase-root-MuiChip-root"
+        data-testid="upvote-element"
+        role="button"
+        tabindex="0"
+      >
+        <svg
+          aria-hidden="true"
+          class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiChip-icon MuiChip-iconSmall MuiChip-iconColorDefault css-i4bv87-MuiSvgIcon-root"
+          data-testid="RecommendIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm6 9.8a.9.9 0 0 1-.1.5l-2.1 4.9a1.34 1.34 0 0 1-1.3.8H9a2 2 0 0 1-2-2v-5a1.28 1.28 0 0 1 .4-1L12 5l.69.69a1.08 1.08 0 0 1 .3.7v.2L12.41 10H17a1 1 0 0 1 1 1z"
+          />
+        </svg>
+        <span
+          class="MuiChip-label MuiChip-labelSmall css-wjsjww-MuiChip-label"
+        >
+          1
+        </span>
+        <span
+          class="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </div>
+    </div>
+    <div
+      class="css-1jv2z0n-MuiStack-root"
+    >
+      <span
+        class="MuiTypography-root MuiTypography-caption css-1sn4lm3-MuiTypography-root"
+      >
+        Event On:  
+        <span
+          class="MuiTypography-root MuiTypography-overline css-1gj9p0o-MuiTypography-root"
+        >
+          Mon Feb 28 2022
+        </span>
+      </span>
+    </div>
+    <div
+      class="css-w4z10b-MuiStack-root"
+    >
+      <div
+        class="MuiChip-root MuiChip-outlined MuiChip-sizeSmall MuiChip-colorSuccess MuiChip-outlinedSuccess css-1smg64b-MuiChip-root"
+      >
+        <span
+          class="MuiChip-label MuiChip-labelSmall css-wjsjww-MuiChip-label"
+        >
+          Front-End
+        </span>
+      </div>
+    </div>
+    <h6
+      class="MuiTypography-root MuiTypography-subtitle2 MuiTypography-gutterBottom css-1oxen2w-MuiTypography-root"
+    >
+      Test Description
+    </h6>
+  </div>
+</div>
+`;
