@@ -2,10 +2,12 @@ import { useRef, useState } from 'react';
 import { Avatar, Box, Button, Divider, IconButton, Popover, Typography } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import { green } from '@mui/material/colors';
+import { useSelector } from 'react-redux';
 
-export default function Account({ account = { name: "Saurabh", employeeID: "1001" } }) {
+export default function Account() {
     const anchorRef = useRef(null);
     const [open, setOpen] = useState(false);
+    const account = useSelector(state => state.user);
 
     const handleOpen = () => {
         setOpen(true);
@@ -47,10 +49,10 @@ export default function Account({ account = { name: "Saurabh", employeeID: "1001
             >
                 <Box sx={{ my: 1.5, px: 2.5 }}>
                     <Typography variant="subtitle1" noWrap>
-                        {account.name}
+                        {account?.Name}
                     </Typography>
                     <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-                        Emp. ID: {account.employeeID}
+                        Emp. ID: {account?.EmployeeID}
                     </Typography>
                 </Box>
 

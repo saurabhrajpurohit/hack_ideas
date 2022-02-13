@@ -1,6 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import HomeNavbar from './HomeNavbar';
+import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useNavigate } from "react-router";
 
 const RootStyle = styled('div')({
     display: 'flex',
@@ -19,6 +22,15 @@ const MainStyle = styled('div')(({ theme }) => ({
 }));
 
 export default function HomeLayout() {
+    const navigate = useNavigate();
+    const user = useSelector(state => state.user);
+
+    useEffect(() => {
+        if(!user) {
+            navigate("/login");
+        }
+    }, [user, navigate]);
+
     return (
         <RootStyle>
             <HomeNavbar />

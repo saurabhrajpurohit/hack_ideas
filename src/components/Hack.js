@@ -4,12 +4,13 @@ import { Recommend } from '@mui/icons-material';
 
 Hack.propTypes = {
     hackathon: PropTypes.object,
-    handleClick: PropTypes.func
+    handleClick: PropTypes.func,
+    userId: PropTypes.number
 };
 
-export default function Hack({ hackathon, handleClick }) {
+export default function Hack({ hackathon, handleClick, userId }) {
     const { Title, Description, EventDate, Tags, Votes } = hackathon;
-    const isLiked = Votes.includes(1001);
+    const isLiked = Votes.includes(userId);
     return (
         <Card elevation={4}>
             <Stack spacing={1} sx={{ p: 3 }}>
@@ -18,6 +19,7 @@ export default function Hack({ hackathon, handleClick }) {
                         {Title}
                     </Typography>
                     <Chip
+                        data-testid="upvote-element"
                         label={Votes.length}
                         size="small"
                         onClick={() => handleClick(!isLiked)}
@@ -36,7 +38,7 @@ export default function Hack({ hackathon, handleClick }) {
                                 color: 'text.primary',
                             }}
                         >
-                            {new Date(EventDate.seconds).toDateString()}
+                            {new Date(EventDate.toDate()).toDateString()}
                         </Typography>
                     </Typography>
                 </Stack>

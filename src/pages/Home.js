@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import { Add, ArrowCircleDownTwoTone, ArrowCircleUpTwoTone } from "@mui/icons-material";
 import { Box, Alert, Button, Container, Grid, LinearProgress, Stack, Typography } from "@mui/material";
-import AddNewHackathon from "../components/AddNewHackathon";
 import Hack from "../components/Hack";
-import { HackathonService, TagsService } from "../service/Service";
+import { HackathonService } from "../service/Service";
+import { useNavigate } from "react-router";
+import { useSelector } from "react-redux";
 
 export default function Home() {
+    const navigate = useNavigate();
+    const user = useSelector(state => state.user);
     const [hackathons, setHackathon] = React.useState([]);
     const [loading, setLoading] = React.useState(true);
-    const [addNew, setAddNew] = React.useState(false);
-    const [tags, setTags] = React.useState([]);
     const [error, setError] = React.useState("");
     const [sort, setSort] = React.useState({
         field: "CreationDate",
@@ -17,17 +18,12 @@ export default function Home() {
     });
 
     useEffect(() => {
-        getHackathons();
-        getTags();
-    }, []);
-
-    function getTags() {
-        TagsService.getAll()
-            .then(data => setTags(data))
-            .catch(err => {
-                console.error(err);
-            });;
-    }
+        if (user) {
+            getHackathons();
+        } else {
+            navigate("/login");
+        }
+    }, [user, navigate]);
 
     function getHackathons() {
         setLoading(true);
@@ -43,9 +39,9 @@ export default function Home() {
 
     function upVote(upvote, hackathon) {
         if (upvote) {
-            hackathon.Votes = [...hackathon.Votes, 1001]
+            hackathon.Votes = [...hackathon.Votes, user.EmployeeID]
         } else {
-            hackathon.Votes = hackathon.Votes.filter(vote => vote !== 1001);
+            hackathon.Votes = hackathon.Votes.filter(vote => vote !== user.EmployeeID);
         }
         setLoading(true);
         HackathonService.update(hackathon.id, hackathon).then(data => {
@@ -58,21 +54,6 @@ export default function Home() {
         });
     };
 
-    function handleClose(add, hackathon) {
-        if (add) {
-            HackathonService.create(hackathon).then(data => {
-                getHackathons();
-                setAddNew(false);
-            }).catch(err => {
-                console.error(err);
-                setError("We are unable to create the hackathon at this time. Please try again later.");
-                setAddNew(false);
-            });
-        } else {
-            setAddNew(false);
-        }
-    };
-
     function handleSort(event) {
         setSort({
             field: event.target.name,
@@ -81,10 +62,10 @@ export default function Home() {
     };
 
     function getSortedData(hackathons = [], sort) {
-        if(sort.field === "Votes") {
+        if (sort.field === "Votes") {
             return hackathons.sort((a, b) => {
                 return sort.order === "desc" ? a.Votes.length - b.Votes.length : b.Votes.length - a.Votes.length;
-            }); 
+            });
         } else {
             return hackathons.sort((a, b) => {
                 return sort.order === "desc" ? a[sort.field] - b[sort.field] : b[sort.field] - a[sort.field];
@@ -101,7 +82,7 @@ export default function Home() {
                         Below are the challenges that are currently available.
                     </Typography>
                 </Typography>
-                <Stack direction="row" spacing={1} sx={{ mx: 2, my: 1 }}>
+                <Stack direction="row" spacing={1} sx={{ my: 1 }}>
                     <Button
                         name="Votes"
                         onClick={handleSort}
@@ -126,7 +107,7 @@ export default function Home() {
                     >
                         Latest
                     </Button>
-                    <Button onClick={() => setAddNew(true)} variant="outlined" startIcon={<Add />} color="primary">Add New</Button>
+                    <Button onClick={() => navigate("/hack/add")} variant="outlined" startIcon={<Add />} color="primary">Add New</Button>
                 </Stack>
             </Stack>
             {error && <Box sx={{ width: '100%' }} pb={1}>
@@ -138,11 +119,10 @@ export default function Home() {
             <Grid container spacing={3}>
                 {getSortedData(hackathons, sort).map((hackathon) => (
                     <Grid key={hackathon.id} item xs={12}>
-                        <Hack hackathon={hackathon} handleClick={(upvote) => upVote(upvote, hackathon)} />
+                        <Hack hackathon={hackathon} handleClick={(upvote) => upVote(upvote, hackathon)} userId={user.EmployeeID} />
                     </Grid>
                 ))}
             </Grid>
-            <AddNewHackathon open={addNew} handleClose={(add, hackathon) => handleClose(add, hackathon)} tags={tags} />
         </Container>
     )
 }

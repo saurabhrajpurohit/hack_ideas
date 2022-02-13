@@ -7,15 +7,17 @@ import Login from './pages/Login';
 import SignUp from './pages/SignUp';
 import Home from './pages/Home';
 import NotFound from './pages/Page404';
+import AddHack from './pages/AddHack';
 
 export default function Router() {
   return useRoutes([
     {
-      path: '/home',
+      path: '/hack',
       element: <HomeLayout />,
       children: [
-        { element: <Navigate to="/home/hacks" replace /> },
-        { path: 'hacks', element: <Home /> }
+        { element: <Navigate to="/hack/list" replace /> },
+        { path: 'list', element: <Home /> },
+        { path: 'add', element: <AddHack /> }
       ]
     },
     {

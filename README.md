@@ -1,6 +1,44 @@
-# Getting Started with Create React App
+# hack_ideas
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Prerequisites
+- `node` : `14.17.1`
+- `npm`: `6.14.13`
+
+- Firebase is used inplace of api's to store user data and challenges and there votes.
+- I am adding the .env file as well along with the zip file for testing the code locally
+- Redux is used just for user state management
+- `Material-UI` UI component libraey is used for themeing and ui components
+- `react-router` is used for route management
+
+## To Test The App
+- Install the dependencies
+- Run code using `nom start` 
+
+## Details
+### Pages
+- Login
+    - Login page for user to login using employee ID
+    - We can use the below id's to login which are preexisting in the system
+      - `1001`
+      - `1002`
+      - `1003`
+      - `1004`
+- Sign Up
+    - User can register themseleved in this page
+    - If added already existing employee id, user will see an error
+- Challenge List
+    - On Successful login/sign up user is redirected to the challenges listing page
+    - Challenges are sortable usign the `Vote` and `Latest` button 
+      - `Vote` button will sort the list based on votes
+      -  `Latest` button will sort the list based on creation date
+          **note:** The date displayed in the challenge card is event date which is different from creation date
+    - User can only upvote the challenge using the thumb chip located at the top right corner of each card
+      - They can either upvote/remove the already added vote
+    - There is a third button available beside the sort button on click of which user is redirected to `Add New Challende` page 
+- Add Challenge 
+    - User can fill up the details and add the challenge
 
 ## Available Scripts
 
@@ -28,43 +66,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -39,7 +39,13 @@ class DatabaseService {
 
     // save a new document in the database
     create = async (data) => {
-        return await this.collection.add(data);
+        return await this.collection.add(data)
+            .then((doc) => {
+                return {
+                    id: doc.id, // append document id to each document
+                    ...data,
+                };
+            });
     };
 
     // update an existing document with new data
