@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - Firebase is used inplace of api's to store user data and challenges and there votes.
 - I am adding the .env file as well along with the zip file for testing the code locally
 - Redux is used just for user state management
+  - Redux state is not persist at this point of time. So, on refresh the user will be loggedout
 - `Material-UI` UI component libraey is used for themeing and ui components
 - `react-router` is used for route management
 
@@ -39,6 +40,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
     - There is a third button available beside the sort button on click of which user is redirected to `Add New Challende` page 
 - Add Challenge 
     - User can fill up the details and add the challenge
+
+- After login the user can logout from the application by using the logout button which can be accessed on click of profile icon available in the navbar
 
 ## Available Scripts
 
