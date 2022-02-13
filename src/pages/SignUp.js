@@ -74,7 +74,7 @@ const SignUp = () => {
     };
 
     return (
-        <Box>
+        <Box data-testid="signup-form">
             <AuthLayout>
                 Already have an account? &nbsp;
                 <Link underline="none" variant="subtitle2" component={RouterLink} to="/login">
@@ -120,6 +120,7 @@ const SignUp = () => {
                                 variant="contained"
                                 color="primary"
                                 type="submit"
+                                data-testid="signup-submit"
                             >
                                 Sign Up
                             </Button>

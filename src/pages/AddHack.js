@@ -39,7 +39,7 @@ export default function AddHack() {
     };
 
     return (
-        <Container maxWidth="sm">
+        <Container data-testid="add-hack-page" maxWidth="sm">
             <Stack sx={{ mb: 5 }}>
                 <Typography variant="h4" gutterBottom>
                     Add Hackathon

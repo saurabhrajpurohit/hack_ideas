@@ -62,7 +62,7 @@ export default function HackForm({ handleSubmit, tags = [] }) {
     };
 
     return (
-        <Stack spacing={1} sx={{ mt: 1 }}>
+        <Stack data-testid="hack-add-form" spacing={1} sx={{ mt: 1 }}>
             <TextField
                 variant="outlined"
                 id="title"
@@ -124,7 +124,7 @@ export default function HackForm({ handleSubmit, tags = [] }) {
             </FormControl>
             <Stack direction="row" justifyContent="space-between">
                 <Button variant="outlined" color="secondary" onClick={() => handleSubmit(false)}>Cancel</Button>
-                <Button variant="outlined" color="primary" onClick={submit}>Save</Button>
+                <Button data-testid="hack-form-submit" variant="outlined" color="primary" onClick={submit}>Save</Button>
             </Stack>
         </Stack>
     )

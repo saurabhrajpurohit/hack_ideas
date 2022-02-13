@@ -15,5 +15,7 @@ const userReducer = (state = userState, action) => {
     }
 };
 
+export {
+    userReducer
+};
 export default createStore(userReducer);
-

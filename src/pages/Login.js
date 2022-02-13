@@ -42,6 +42,7 @@ const Login = () => {
             setLoading(true);
             UserService.getByField("EmployeeID", Number(employeeID)).then(data => {
                 setLoading(false);
+                console.log(data);
                 if (data.length) {
                     dispatch(setUser(data[0]));
                     navigate("/hack/list");
@@ -57,7 +58,7 @@ const Login = () => {
     };
 
     return (
-        <Box>
+        <Box data-testid="login-form">
             <AuthLayout>
                 Don’t have an account? &nbsp;
                 <Link
@@ -71,7 +72,7 @@ const Login = () => {
             </AuthLayout>
             <Container maxWidth="sm">
                 <ContentStyle>
-                    <form>
+                    <form onSubmit={submit}>
                         <Stack sx={{ mb: 5 }}>
                             <Typography variant="h4" gutterBottom>
                                 Sign in to Hack- Ideas
@@ -96,6 +97,9 @@ const Login = () => {
                                 label="Employee ID"
                                 error={!!fieldError}
                                 helperText={fieldError}
+                                inputProps={{
+                                    "data-testid":"employee-id"
+                                }}
                                 onChange={(event) => setEmployeeID(event.target.value)}
                             />
                             {loading && <Box sx={{ width: '100%' }}>
@@ -106,7 +110,7 @@ const Login = () => {
                                 variant="contained"
                                 color="primary"
                                 type="submit"
-                                onClick={submit}
+                                data-testid="login-submit"
                             >
                                 Login
                             </Button>

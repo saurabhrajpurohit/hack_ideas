@@ -10,11 +10,9 @@ const RootStyle = styled('div')(({ theme }) => ({
     paddingBottom: theme.spacing(10)
 }));
 
-// ----------------------------------------------------------------------
-
 export default function Page404() {
     return (
-        <RootStyle>
+        <RootStyle data-testid="page-404">
             <Container>
                 <Box sx={{ maxWidth: 480, margin: 'auto', textAlign: 'center' }}>
                     <Typography variant="h3" paragraph>
@@ -25,7 +23,7 @@ export default function Page404() {
                         Be sure to check your spelling.
                     </Typography>
 
-                    <Button to="/" size="large" variant="contained" component={RouterLink}>
+                    <Button sx={{ mt: 3 }} to="/" size="large" variant="contained" component={RouterLink}>
                         Go to Home
                     </Button>
                 </Box>

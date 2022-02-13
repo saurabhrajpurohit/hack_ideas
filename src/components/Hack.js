@@ -9,10 +9,10 @@ Hack.propTypes = {
 };
 
 export default function Hack({ hackathon, handleClick, userId }) {
-    const { Title, Description, EventDate, Tags, Votes } = hackathon;
+    const { id, Title, Description, EventDate, Tags, Votes } = hackathon;
     const isLiked = Votes.includes(userId);
     return (
-        <Card elevation={4}>
+        <Card data-testid={id} elevation={4}>
             <Stack spacing={1} sx={{ p: 3 }}>
                 <Stack direction="row" alignItems="center" justifyContent="space-between">
                     <Typography variant="h6">

@@ -11,6 +11,7 @@ class DatabaseService {
     // returns list of records as an array of javascript objects
     getAll = async () => {
         const snapshot = await this.collection.get();
+        console.log(this.collection.get());
         return snapshot.docs.map((doc) => {
             return {
                 id: doc.id, // append document id to each document

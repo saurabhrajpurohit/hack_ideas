@@ -74,7 +74,7 @@ export default function Home() {
     };
 
     return (
-        <Container>
+        <Container data-testid="home-screen">
             <Stack direction="row" alignItems="center" justifyContent="space-between">
                 <Typography variant="h5" gutterBottom>
                     Hack Ideas <br />
