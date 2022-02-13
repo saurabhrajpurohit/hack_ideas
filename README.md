@@ -10,14 +10,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - I am adding the .env file as well along with the zip file for testing the code locally
 - Redux is used just for user state management
   - Redux state is not persist at this point of time. So, on refresh the user will be loggedout
-- `Material-UI` UI component libraey is used for themeing and ui components
+- `Material-UI` UI component library is used for themeing and ui components
 - `react-router` is used for route management
 
 ## To Test The App
 - Install the dependencies
-- Run code using `nom start` 
+- Run code using `npm start` 
 
 ## Details
+###
+- [GitHub](https://github.com/saurabhrajpurohit/hack_ideas)
+- [Demo](https://hack-ideas-10346.web.app/)
+
 ### Pages
 - Login
     - Login page for user to login using employee ID
